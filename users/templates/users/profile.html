@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">username:{{ profile.username }}</h2>
+          <p class="text-secondary">email:{{ profile.email }}</p>
+          <p class="text-secondary">number:{{ profile.number }}</p>
+          <p class="text-secondary">age:{{ profile.age }}</p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="media-body">
+         <a class='btn btn-secondary btn-lg' role='button'  href="{% url 'update_profile' %}">Profile Update</a>
+
+    </div>
+{% endblock content %}
